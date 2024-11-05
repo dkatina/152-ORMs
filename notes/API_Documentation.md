@@ -45,7 +45,7 @@ paths: {}
 definitions: {}
 ```
 
-##### Now we can set up Swagger in our app.py
+##### Now we can set up Swagger in our app __init__.py
 
 we'll do this by creating a swagger_blueprint (similar to a flask blueprint), and register it to our app.
 
