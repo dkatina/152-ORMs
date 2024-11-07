@@ -30,7 +30,9 @@ def login():
             "token": token
         }
     
-    return jsonify(response), 200
+        return jsonify(response), 200
+    else:
+        return jsonify({"message": "Invalid email or password!"}), 400
 
 
 #CREATE Member
@@ -43,6 +45,11 @@ def create_member():
     #If data invalid respond with error message
     except ValidationError as e:
         return jsonify(e.messages), 400
+    
+    query = select(Member).where(Member.email == member_data['email'])
+    existing = db.session.execute(query).scalars().first()
+    if existing:
+        return jsonify({"message": "Account already associated with that email."}), 400
     
     #If data is valid, create new member with that data
     pwhash = generate_password_hash(member_data['password'])
@@ -102,4 +109,4 @@ def delete_member(token_user):
 
     db.session.delete(member)
     db.session.commit()
-    return jsonify({"message": f"succeffuly deleted user {token_user}!"})
+    return jsonify({"message": f"succeffuly deleted user {token_user}!"}), 200
