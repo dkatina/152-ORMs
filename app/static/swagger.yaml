@@ -59,7 +59,7 @@ paths:
             $ref: "#/definitions/CreateMemberPayload"
       responses:
         201:
-          descriptions: "Successfull Member Creation"
+          description: "Successfull Member Creation"
           schema:
             $ref: "#/definitions/CreateMemberResponse"
           examples:
