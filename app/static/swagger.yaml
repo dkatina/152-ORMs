@@ -3,7 +3,7 @@ info:
   title: "Library API"
   description: "API to manage a Library System"
   version: "1.0.0"
-host: "https://libraryapi-0weq.onrender.com" #working on hosted website
+host: "libraryapi-0weq.onrender.com" #working on local host
 schemes:
   - "https"
 consumes:
@@ -59,7 +59,7 @@ paths:
             $ref: "#/definitions/CreateMemberPayload"
       responses:
         201:
-          description: "Successfull Member Creation"
+          descriptions: "Successfull Member Creation"
           schema:
             $ref: "#/definitions/CreateMemberResponse"
           examples:
