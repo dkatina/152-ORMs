@@ -99,7 +99,7 @@ class TestMember(unittest.TestCase):
             "password": ""
         }
 
-        headers = {'Authorization': "Bearer " + self.token}
+        headers = {'Authorization': "Bearer " + self.test_login_member()}
 
         response = self.client.put('/members/', json=update_payload, headers=headers)
         self.assertEqual(response.status_code, 200)

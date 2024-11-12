@@ -17,7 +17,7 @@ jobs: #The things we want to happen on push
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.12 #setting up python on our build environment
+          python-version: 3.12 #setting up python on our build environment adding comment
         
       - name: Create virtual Environment
         run: |
